@@ -26,8 +26,9 @@
 
   <nav class="site-header sticky-top py-1">
     <div class="container d-flex flex-md-row justify-content-around">
-      <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-        aria-controls="offcanvasWithBothOptions col-xl-3">acount</button>
+      <button class="btn btn-light acount_bt" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+        aria-controls="offcanvasWithBothOptions col-xl-3"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEXdC89Ald1vkVYBh0CSn-c2iqrbatcbnanw&usqp=CAU"
+        alt="" width="32" height="32" class="rounded-circle me-2"></button>
       <div class="nav_company col-xl-7">
         <h3>HAHAxiaomaibu</h3>
       </div>
@@ -43,15 +44,15 @@
   <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
     aria-labelledby="offcanvasWithBothOptionsLabel">
     <div class="offcanvas-header text-bg-dark">
-      <div class="dropdown canvas_ac">
+      <div class="canvas_ac">
         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
           data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="" alt="" width="32" height="32" class="rounded-circle me-2">
-          <strong></strong>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEXdC89Ald1vkVYBh0CSn-c2iqrbatcbnanw&usqp=CAU"
+            alt="" width="32" height="32" class="rounded-circle me-2">
+          <strong>barack obama</strong>
         </a>
-        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" >
-          <li><a class="dropdown-item" href="#">New project...</a></li>
-          <li><a class="dropdown-item" href="#">Settings</a></li>
+        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+
           <li><a class="dropdown-item" href="#">Profile</a></li>
           <li>
             <hr class="dropdown-divider">
@@ -62,9 +63,9 @@
       <div class="canvas_ac">
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-      
+
     </div>
-    <div class="offcanvas-body d-flex flex-column flex-shrink-0 p-3 text-bg-dark " >
+    <div class="offcanvas-body d-flex flex-column flex-shrink-0 p-3 text-bg-dark ">
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
@@ -78,14 +79,6 @@
         <li>
           <a href="#" class="nav-link text-white">
             <svg class="bi pe-none me-2" width="16" height="16">
-              <use xlink:href="#speedometer2"></use>
-            </svg>
-            Dashboard
-          </a>
-        </li>
-        <li>
-          <a href="#" class="nav-link text-white">
-            <svg class="bi pe-none me-2" width="16" height="16">
               <use xlink:href="#table"></use>
             </svg>
             Orders
@@ -94,22 +87,20 @@
         <li>
           <a href="#" class="nav-link text-white">
             <svg class="bi pe-none me-2" width="16" height="16">
-              <use xlink:href="#grid"></use>
+              <use xlink:href="#table"></use>
             </svg>
-            Products
+            History
           </a>
         </li>
         <li>
           <a href="#" class="nav-link text-white">
             <svg class="bi pe-none me-2" width="16" height="16">
-              <use xlink:href="#people-circle"></use>
+              <use xlink:href="#grid"></use>
             </svg>
-            Customers
+            settings
           </a>
         </li>
       </ul>
-      <hr>
-
     </div>
   </div>
   <!-- nav end -->
@@ -157,16 +148,37 @@
   </div>
   <!-- carousel end -->
   <!-- select type -->
-  <p>
-    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample"
+  <p class="co">
+    <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample"
       aria-expanded="false" aria-controls="collapseWidthExample">
-      Toggle width collapse
+      tipos de snacks
     </button>
   </p>
-  <div style="min-height: 120px;">
+  <div class="co_height">
     <div class="collapse collapse-horizontal" id="collapseWidthExample">
-      <div class="card card-body" style="width: 300px;">
-        This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
+      <div class="card card-body select">
+        <div>
+          <i class="fa-solid fa-pepper-hot"></i>
+          <p>辣！</p>
+        </div>
+        <div>
+          <i class="fa-solid fa-cookie-bite"></i>
+          <p>甜品</p>
+        </div>
+        <div>
+          <i class="fa-solid fa-bottle-water"></i>
+          <p>酒水饮料</p>
+        </div>
+        <div>
+          <i class="fa-solid fa-mortar-pestle"></i>
+          <p>药材/养生</p>
+        </div>
+        <div>
+          <i class="fa-solid fa-bread-slice"></i>
+          <p>新鲜面包</p>
+        </div>
+        
+        
       </div>
     </div>
   </div>

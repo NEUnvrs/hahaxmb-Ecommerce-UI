@@ -37,8 +37,37 @@ nav {
   margin-top: 2.5rem;
 }
 
+.acount_bt {
+  background: transparent;
+  border: transparent;
+}
+
+.acount_bt:hover {
+  background: transparent;
+  border: transparent;
+}
+
 .carousel {
   margin-bottom: 4rem;
+}
+
+.co {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.co_height {
+  display: flex;
+  justify-content: center;
+  min-height: 80px;
+}
+
+.select {
+  width: 900px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .products {
