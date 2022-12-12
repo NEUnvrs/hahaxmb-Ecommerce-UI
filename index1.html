@@ -26,9 +26,10 @@
 
   <nav class="site-header sticky-top py-1">
     <div class="container d-flex flex-md-row justify-content-around">
-      <button class="btn btn-light acount_bt" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-        aria-controls="offcanvasWithBothOptions col-xl-3"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEXdC89Ald1vkVYBh0CSn-c2iqrbatcbnanw&usqp=CAU"
-        alt="" width="32" height="32" class="rounded-circle me-2"></button>
+      <button class="btn btn-light acount_bt" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions col-xl-3"><img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEXdC89Ald1vkVYBh0CSn-c2iqrbatcbnanw&usqp=CAU"
+          alt="" width="32" height="32" class="rounded-circle me-2"></button>
       <div class="nav_company col-xl-7">
         <h3>HAHAxiaomaibu</h3>
       </div>
@@ -148,39 +149,42 @@
   </div>
   <!-- carousel end -->
   <!-- select type -->
-  <p class="co">
-    <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample"
-      aria-expanded="false" aria-controls="collapseWidthExample">
-      tipos de snacks
-    </button>
-  </p>
-  <div class="co_height">
-    <div class="collapse collapse-horizontal" id="collapseWidthExample">
-      <div class="card card-body select">
-        <div>
-          <i class="fa-solid fa-pepper-hot"></i>
+  <div class="select">
+        <div class="types hot">
+          <div class="hot">
+            <i class="fa-solid fa-pepper-hot"></i>
           <p>辣！</p>
+          </div>
         </div>
-        <div>
-          <i class="fa-solid fa-cookie-bite"></i>
+        <div class="types">
+          <div class="sweet">
+            <i class="fa-solid fa-cookie-bite"></i>
           <p>甜品</p>
+          </div>
+          
         </div>
-        <div>
-          <i class="fa-solid fa-bottle-water"></i>
+        <div class="types">
+          <div class="drink">
+            <i class="fa-solid fa-bottle-water"></i>
           <p>酒水饮料</p>
+          </div>
+          
         </div>
-        <div>
-          <i class="fa-solid fa-mortar-pestle"></i>
+        <div class="types">
+          <div class="medic">
+            <i class="fa-solid fa-mortar-pestle"></i>
           <p>药材/养生</p>
+          </div>
+          
         </div>
-        <div>
-          <i class="fa-solid fa-bread-slice"></i>
+        <div class="types">
+          <div class="bread">
+            <i class="fa-solid fa-bread-slice"></i>
           <p>新鲜面包</p>
+          </div>
+          
         </div>
-        
-        
-      </div>
-    </div>
+
   </div>
   <!-- product start -->
   <div class="products">
@@ -414,6 +418,50 @@
     </div>
   </div>
   <!-- product end -->
+  <!-- shoppcar view start -->
+  <section class="shop_overlay">
+    <div class="shopcar">
+      <span class="shopcar_close">
+        <button type="button" class="btn-close" aria-label="Close"></button>
+      </span>
+      <h1>your shopping list</h1>
+
+      <div class="viewcenter">
+
+        <div class="view_item">
+          <div>
+            <img
+            src="https://cdn.discordapp.com/attachments/1044291289249755186/1045396681295941662/0ef847e8-c055-4b1e-9cf0-c09578c4ac26.jpg"
+            alt="eat green">
+            <p class="pri">3.25€</p>
+          </div>
+          <div>
+            <h3>"I'm very Yummy!"</h3>
+            
+          </div>
+          <div class="updown">
+            <span>
+              <i class="fa-solid fa-caret-up"></i>
+            </span>
+            <p>1</p>
+            <span>
+              <i class="fa-solid fa-caret-down"></i>
+            </span>
+          </div>
+          <div class="elimi">
+            <i class="fa-regular fa-trash-can"></i>
+          </div>
+        </div>
+        <div class="shop_footer">
+          <h3>total: <span class="total_item">0€</span></h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- shoppcar view end -->
+
+
   <!-- pagination  -->
   <nav aria-label="..." class="pagination">
     <ul class="pagination">

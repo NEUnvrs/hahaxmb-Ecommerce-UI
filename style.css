@@ -48,26 +48,59 @@ nav {
 }
 
 .carousel {
-  margin-bottom: 4rem;
-}
-
-.co {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.co_height {
-  display: flex;
-  justify-content: center;
-  min-height: 80px;
+  margin-bottom: 4rem z-index 1;
 }
 
 .select {
-  width: 900px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  min-height: 80px;
+  flex-wrap: wrap;
+}
+
+.types {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 4rem 4rem 0 4rem;
+}
+.types i {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+.types p {
+  margin-top: 2rem;
+}
+.types .hot {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(199, 45, 45);
+}
+.types .sweet {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: burlywood;
+}
+.types .drink {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(46, 171, 171);
+}
+.types .medic {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(52, 176, 54);
+}
+.types .bread {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: goldenrod;
 }
 
 .products {
@@ -90,6 +123,85 @@ nav {
 
 .products h1 {
   color: #333;
+}
+
+.shop_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 300ms ease-in-out;
+  background-color: rgba(0, 0, 0, 0.6);
+  visibility: hidden;
+  z-index: 4;
+}
+
+.shopcar {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255, 255, 255);
+  width: 60%;
+  height: 80%;
+  opacity: 0;
+  visibility: hidden;
+  transform: all 300ms ease-in-out;
+  border-radius: 1.5rem;
+  padding: 1.6rem;
+  margin-top: 2rem;
+}
+
+.shopcar.show {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+.shop_overlay.show {
+  visibility: visible;
+}
+
+.view_item img {
+  width: 9rem;
+  border-radius: 10px;
+}
+
+.shop_overlay h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.view_item {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 2fr 4fr 2fr 2fr;
+  justify-items: center;
+}
+
+.updown {
+  color: blue;
+  font-size: 1.5rem;
+}
+.updown p {
+  color: rgb(0, 0, 0);
+  margin: -0.3rem 0 -0.3rem 0;
+}
+.updown span {
+  cursor: pointer;
+}
+
+.elimi {
+  color: red;
+  font-size: 1.5rem;
+}
+
+.shop_footer {
+  text-align: center;
+}
+.shop_footer span {
+  color: blue;
 }
 
 .pagination {
