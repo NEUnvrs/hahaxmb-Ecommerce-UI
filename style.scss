@@ -122,6 +122,13 @@ nav {
         flex-direction: column;
         color: goldenrod;
     }
+
+    .ecological{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        color: rgb(9, 221, 12);
+    }
 }
 
 // select type ends
@@ -244,6 +251,28 @@ nav {
 }
 
 // pagination elements ends
+// product view HTML elements !!!!!!!!!!!!!!!!
+.V_product{
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 5rem 0 0 0 ;
+}
+
+.Vimg_product{
+    width: 32rem;
+    border-radius: 10px;
+    box-shadow: 6px 12px 32px -7px rgba(0, 0, 0, 0.98);
+}
+
+.Vimg_product img{
+    width: 32rem;
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
 
 
 /* Since positioning the image, we need to help out the caption */
@@ -305,45 +334,6 @@ nav {
     color: rgb(236, 13, 13);
     text-decoration: none;
 }
-
-/*
-* Dummy devices (replace them with your own or something else entirely!)
-*/
-
-.product-device {
-    position: absolute;
-    right: 10%;
-    bottom: -30%;
-    width: 300px;
-    height: 540px;
-    background-color: #333;
-    border-radius: 21px;
-    transform: rotate(30deg);
-}
-
-.product-device::before {
-    position: absolute;
-    top: 10%;
-    right: 10px;
-    bottom: 10%;
-    left: 10px;
-    content: "";
-    background-color: rgba(255, 255, 255, .1);
-    border-radius: 5px;
-}
-
-.product-device-2 {
-    top: -25%;
-    right: auto;
-    bottom: 0;
-    left: 5%;
-    background-color: #e5e5e5;
-}
-
-
-/*
-* Extra utilities
-*/
 
 .flex-equal>* {
     flex: 1;
