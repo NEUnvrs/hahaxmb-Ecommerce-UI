@@ -201,17 +201,24 @@ nav {
 }
 
 .produflex {
+    width: 20rem;
     margin: 2rem;
 }
 
 .products img {
+    object-fit: cover;
     width: 20rem;
+    height: 20rem;
     border-radius: 10px;
     box-shadow: 6px 12px 32px -7px rgba(0, 0, 0, 0.98);
 }
 
 .products h1 {
     color: #333;
+}
+
+.products .price {
+    font-size: 2rem;
 }
 
 // product  elements    ends
