@@ -66,7 +66,6 @@
 
     </div>
     <div class="offcanvas-body d-flex flex-column flex-shrink-0 p-3 text-bg-dark ">
-      <hr>
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
           <a href="#" class="nav-link active" aria-current="page">
@@ -78,7 +77,7 @@
         </li>
         <li>
           <a href="#" class="nav-link text-white">
-            <svg class="bi pe-none me-2" width="16" height="16">
+            <svg class="bi pe-none me-2 " width="16" height="16">
               <use xlink:href="#table"></use>
             </svg>
             Orders
@@ -107,23 +106,26 @@
   <!-- carousel start -->
   <div id="carouselCaptions" class="carousel slide" data-bs-ride="true">
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="0" class="active"
-        aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="1"
-        aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="2"
-        aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="0" class="active" aria-current="true"
+        aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
       <div class="ad1 carousel-item active">
-        <img src="https://cdn.discordapp.com/attachments/1044291289249755186/1057723478972833842/pngtree-e-commerce-taobao-517-eating-day-yellow-cloud-dried-fruit-food-image_904976.jpg" class="d-block w-100" alt="">
+        <img
+          src="https://cdn.discordapp.com/attachments/1044291289249755186/1057723478972833842/pngtree-e-commerce-taobao-517-eating-day-yellow-cloud-dried-fruit-food-image_904976.jpg"
+          class="d-block w-100" alt="">
 
       </div>
       <div class="ad2 carousel-item">
-        <img src="https://goldbelly.imgix.net/uploads/merchant/main_image/769/greens-babka.0b4d02739fdc41780aa0a3a5580eaf45.jpg?ixlib=rails-3.0.2" class="d-block w-100" alt="">
+        <img
+          src="https://goldbelly.imgix.net/uploads/merchant/main_image/769/greens-babka.0b4d02739fdc41780aa0a3a5580eaf45.jpg?ixlib=rails-3.0.2"
+          class="d-block w-100" alt="">
       </div>
       <div class="ad3 carousel-item">
-        <img src="https://i.pinimg.com/originals/53/37/bd/5337bd74408181800c6df54c4b4a3e9b.jpg" class="d-block w-100" alt="">
+        <img src="https://i.pinimg.com/originals/53/37/bd/5337bd74408181800c6df54c4b4a3e9b.jpg" class="d-block w-100"
+          alt="">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselCaptions" data-bs-slide="prev">
@@ -139,44 +141,61 @@
   <!-- select type -->
   <div class="select d-flex justify-content-center">
     <div class="types">
-      <div class="all_products">
-        <i class="fa-solid fa-layer-group"></i>
-        <p>alltype</p>
-      </div>
+      <button value="" id="all" onclick="defaulttype()">
+        <div class="all_products" >
+          <i class="fa-solid fa-layer-group"></i>
+          <p>alltype</p>
+        </div>
+      </button>
 
     </div>
     <div class="types">
-      <div class="hot">
-        <i class="fa-solid fa-pepper-hot"></i>
-        <p>spicy!</p>
-      </div>
-    </div>
-    <div class="types">
-      <div class="sweet">
-        <i class="fa-solid fa-cookie-bite"></i>
-        <p>sweet</p>
-      </div>
+      <button value="spicy" id="spi" onclick="filterspy()">
+        <div class="hot">
+          <i class="fa-solid fa-pepper-hot"></i>
+          <p>spicy!</p>
+        </div>
+      </button>
 
     </div>
     <div class="types">
-      <div class="drink">
-        <i class="fa-solid fa-bottle-water"></i>
-        <p>soda</p>
-      </div>
+      <button  value="sweet" id="sweet" onclick="filtersweet()">
+        <div class="sweet">
+          <i class="fa-solid fa-cookie-bite"></i>
+          <p>sweet</p>
+        </div>
+      </button>
+
 
     </div>
     <div class="types">
-      <div class="medic">
-        <i class="fa-solid fa-mortar-pestle"></i>
-        <p>healthy</p>
-      </div>
+      <button value="soda" id="soda" onclick="filtersoda()">
+        <div class="drink" value="soda">
+          <i class="fa-solid fa-bottle-water"></i>
+          <p>soda</p>
+        </div>
+      </button>
+
 
     </div>
     <div class="types">
-      <div class="bread">
-        <i class="fa-solid fa-bread-slice"></i>
-        <p>bread</p>
-      </div>
+      <button value="healthy" id="health" onclick="filterhealth()">
+        <div class="medic" value="Healthy">
+          <i class="fa-solid fa-mortar-pestle"></i>
+          <p>healthy</p>
+        </div>
+      </button>
+
+
+    </div>
+    <div class="types">
+      <button value="bread" id="bread" onclick="filterbread()">
+        <div class="bread" value="bread">
+          <i class="fa-solid fa-bread-slice"></i>
+          <p>bread</p>
+        </div>
+      </button>
+
 
     </div>
 
@@ -184,7 +203,7 @@
   </div>
   <!-- product start -->
   <div class="products" id="products">
-   
+
   </div>
   <!-- product end -->
   <!-- shoppcart view start -->
@@ -193,12 +212,12 @@
       <span class="shopcart_close">
         <button type="button" class="btn-close" aria-label="Close"></button>
       </span>
-      <h1>your shopping list</h1>
+      <h1>your shop list</h1>
 
       <div class="viewcenter">
 
         <div class="view_item">
-          <div>
+          <!-- <div>
             <img
               src="https://cdn.discordapp.com/attachments/1044291289249755186/1045396681295941662/0ef847e8-c055-4b1e-9cf0-c09578c4ac26.jpg"
               alt="eat green">
@@ -219,15 +238,17 @@
           </div>
           <div class="elimi">
             <i class="fa-regular fa-trash-can"></i>
-          </div>
-        </div>
-        <div class="shop_footer">
-          <h3>total: <span class="total_items">0€</span></h3>
-          <button type="button" class="btn btn-danger removeCart">Remove shop list</button>
-          <button type="button" class="btn btn-success">confirm to buy</button>
+          </div> -->
         </div>
 
       </div>
+      <div class="shop_footer">
+        <h3>total: <span class="total_items"></span>€</h3>
+        <button type="button" class="btn btn-danger removeCart"><i class="fa-solid fa-eraser"></i>Remove shop
+          list</button>
+        <button type="button" class="btn btn-success"><i class="fa-solid fa-check"></i>confirm to buy</button>
+      </div>
+
     </div>
   </section>
 

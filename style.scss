@@ -76,7 +76,13 @@ nav {
     border: transparent;
 }
 
+#shopcar {
+    cursor: pointer;
+}
 
+.order_offcanvas{
+    cursor: pointer;
+}
 
 // nav style ends
 // carousel elements
@@ -134,15 +140,22 @@ nav {
     flex-direction: column;
     flex-wrap: nowrap;
     margin: 4rem 4rem 0 4rem;
-
-    i {
-        font-size: 2.5rem;
+    button{
+        text-decoration: none;
+        background-color: white;
+        border: none;
+    }
+    div{
         cursor: pointer;
+        i {
+            font-size: 2.5rem;
+        }
+    
+        p {
+            margin-top: 2rem;
+        }
     }
-
-    p {
-        margin-top: 2rem;
-    }
+    
 
     .all_products{
             display: flex;
@@ -222,7 +235,7 @@ nav {
 }
 
 // product  elements    ends
-// shoppcar view start
+// shoppcart view start
 
 .shop_overlay {
     position: fixed;
@@ -237,7 +250,7 @@ nav {
 
 }
 
-.shopcar {
+.shopcart {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -251,10 +264,10 @@ nav {
     border-radius: 1.5rem;
     padding: 1.6rem;
     margin-top: 2rem;
-    
+    overflow-y: scroll;
 }
 
-.shopcar.show {
+.shopcart.show {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
     visibility: visible;
@@ -262,11 +275,11 @@ nav {
 
 .shop_overlay.show {
     visibility: visible;
-    
 }
 
 .view_item img {
-    width: 9rem;
+    width: 7rem;
+    height: 7rem;
     border-radius: 10px;
 }
 
@@ -280,6 +293,11 @@ nav {
     align-items: center;
     grid-template-columns: 2fr 4fr 2fr 2fr;
     justify-items: center;
+    margin: 1.5rem 0.5rem 1.5rem 0.5rem;
+    .description{
+        font-size: 1.5rem;
+        text-align: center;
+    }
 }
 
 .updown {
@@ -296,10 +314,13 @@ nav {
     }
 }
 
-.elimi {
+.eliminate {
     color: red;
     font-size: 1.5rem;
+    cursor: pointer;
 }
+
+
 
 .shop_footer {
     text-align: center;
@@ -356,7 +377,7 @@ nav {
         margin: 3rem 2rem 0 3rem;
     }
 
-    .types i{
+    .types div i{
         font-size: 2rem;
     }
 
@@ -371,7 +392,7 @@ nav {
         width: 15rem;
     }
 
-    .shopcar{
+    .shopcart{
         width: 100%;
         height: 93%;
         border-radius: 0;
@@ -380,7 +401,7 @@ nav {
         width: 5rem;
     }
 
-    .types i{
+    .types div i{
         font-size: 1.5rem;
     }
 

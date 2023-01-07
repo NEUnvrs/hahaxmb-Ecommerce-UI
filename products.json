@@ -1,5 +1,5 @@
 {
-    "allprocducts":[
+    "allproducts":[
         {
             "id":1,
             "product":"Beef Jerky",
@@ -20,7 +20,7 @@
             "id":3,
             "product":"Chia Pudin",
             "price":"6.99",
-            "type":"Healthy",
+            "type":"healthy",
             "image":"https://cdn.discordapp.com/attachments/1044291289249755186/1056653973949517914/1671996308346.jpg",
             "alt":"eat this green"
         },
@@ -69,7 +69,7 @@
             "id":9,
             "product":"Rio Pop Soda",
             "price":"2.50",
-            "type":"Soda",
+            "type":"soda",
             "image":"https://cdn.discordapp.com/attachments/705443439755657256/1056665876738355221/1671999161073.jpg",
             "alt":"eat this green"
         },
@@ -78,7 +78,7 @@
             "id":10,
             "product":"Chinese bbq beef",
             "price":"9.95",
-            "type":"all",
+            "type":"spicy",
             "image":"https://cdn.discordapp.com/attachments/705443439755657256/1056665876914524252/1671999161081.jpg",
             "alt":"eat this green"
         },

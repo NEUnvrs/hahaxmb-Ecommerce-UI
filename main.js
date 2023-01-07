@@ -41,7 +41,7 @@ class mainUI {
             </div>
             <div class="bt ">
                 <a href="productview.html? id=${element.id}" class="btn btn-primary">details</a>
-                <a href="" data-id="${element.id}" class="btn btn-primary addcar">add to shop list<i class="fa-solid fa-cart-arrow-down"></i></a>
+                <button href="" data-id="${element.id}" class="btn btn-primary addcar">add to shop list<i class="fa-solid fa-cart-arrow-down"></i></button>
             </div>
           </div>
         </div>`
@@ -50,23 +50,23 @@ class mainUI {
     }
 
     buttons() {
-        const buttons = [...document.querySelectorAll('addcar')];
+        const buttons = [...document.querySelectorAll('.addcar')];
         buttonDOM = buttons;
         buttons.forEach(button => {
             const id = button.dataset.id;
             const incar = shopcart.find(item => item.id === parseInt(id, 10));
             if (incar) {
-                button.innerHTML = "added"
+                button.innerHTML = "added chek out!"
                 button.disabled = true
             }
             button.addEventListener("click", statu => {
                 statu.preventDefault();
-                statu.target.innerHTML = "added"
-                statu.disabled = true
+                statu.target.innerHTML = "added chek out!"
+                statu.target.disabled = true
 
                 const shopItem = { ...Storage.getProduct(id), quantity: 1 }
 
-                shopcart = [...shopcart, ...shopItem]
+                shopcart = [...shopcart, shopItem]
 
                 Storage.autoSave(shopcart)
 
@@ -97,14 +97,16 @@ class mainUI {
             <img
               src="${image}"
               alt="eat ${alt}">
-            <p class="pri">${price}</p>
+              
+            
           </div>
-          <div>
-            <h3>${product}</h3>
+          <div class="description">
+          <h3>${product}</h3>
+          <p class="pri">${price}€</p>
 
           </div>
           <div class="updown">
-            <span class="increase" data-id="${id}"">
+            <span class="increase" data-id="${id}">
               <i class="fa-solid fa-caret-up"></i>
             </span>
             <p class="itemQuantity">1</p>
@@ -112,8 +114,10 @@ class mainUI {
               <i class="fa-solid fa-caret-down"></i>
             </span>
           </div>
-          <div class="elimi" data-id="${id}">
-            <i class="fa-regular fa-trash-can"></i>
+          <div>
+            <span class="eliminate" data-id="${id}">
+                <i class="fa-regular fa-trash-can"></i>
+            </span>
           </div>`
 
         cartCenter.appendChild(div)
@@ -121,6 +125,10 @@ class mainUI {
     show() {
         shopDom.classList.add('show')
         overlay.classList.add('show')
+    }
+    hide() {
+        shopDom.classList.remove('show')
+        overlay.classList.remove('show')
     }
     setAPP() {
         shopcart = Storage.getcart()
@@ -139,23 +147,26 @@ class mainUI {
             this.hide()
         })
 
-        cartCenter.addEventListener("click", () => {
-            const target = i.target.closest("span")
-            const targetElement = target.classList.contains("removeCart")
+        cartCenter.addEventListener("click", re => {
+            const target = re.target.closest("span")
+            const targetElement = target.classList.contains("eliminate")
+            console.log(target);
+            console.log(targetElement)
 
             if (!target) return
             if (targetElement) {
                 const id = parseInt(target.dataset.id)
-                this.removeCart(id)
+                this.removeItem(id)
                 cartCenter.removeChild(target.parentElement.parentElement)
             }
             else if (target.classList.contains("increase")) {
                 const id = parseInt(target.dataset.id, 10)
                 let item = shopcart.find(element => element.id === id)
-                item.quantity++
+                item.quantity++;
                 Storage.autoSave(shopcart)
                 this.setItemValues(shopcart)
-                target.nextElemtsibling.innerText = item.quantity
+                target.nextElementSibling.innerText = item.quantity
+                
 
             }
             else if (target.classList.contains("decrease")) {
@@ -165,22 +176,23 @@ class mainUI {
 
                 if (item.quantity > 0) {
                     Storage.autoSave(shopcart)
-                    thhis.setItemValues(shopcart)
-                    target.previousELementsibling.innerText = item.quantity
+                    this.setItemValues(shopcart)
+                    target.previousElementSibling.innerText = item.quantity
+                }
+                else {
+                    this.removeItem(id);
+                    cartCenter.removeChild(target.parentElement.parentElement)
                 }
             }
-            else {
-                this.removeCartItem(id);
-                cartCenter.removeChild(target.parentElement.parentElement)
-            }
+            
         })
     }
     removeShopcart() {
         const cartitems = shopcart.map(element => element.id)
-        cartitems.forEach(id => this.removeCartItem(id))
+        cartitems.forEach(id => this.removeItem(id))
 
         while (cartCenter.children.length > 0) {
-            cartCenter.removeItem(cartCenter.children[0])
+            cartCenter.removeChild(cartCenter.children[0])
 
         }  
     }
@@ -190,7 +202,7 @@ class mainUI {
         this.setItemValues(shopcart);
         Storage.autoSave(shopcart)
 
-        let bt = this.singleButton(id);
+        let button = this.singleButton(id);
         if (button) {
             button.disabled = false;
             button.innerText = "add to shop list";
@@ -198,12 +210,84 @@ class mainUI {
     }
 
     singleButton(id){
-        return buttonDOM.find(button => parseInt(button.dataset.id == id))
+        return buttonDOM.find(button => parseInt(button.dataset.id) == id)
     }
     
 }
 
+// filter items function
 
+let defaul = "";
+let spi = "";
+let sweet = "";
+let soda = ""; 
+let health = "";
+let bread = "";
+
+
+let filtred = [];
+
+function defaulttype(){
+    const ui = new mainUI();
+    defaul = document.getElementById("all").value;
+    ui.renderproducts(filtred)
+    ui.buttons()
+}
+
+function filterspy(){
+    const ui = new mainUI();
+    spi = document.getElementById("spi").value;
+    if(spi.length >0){
+        const filt = filtred.filter(value => value.type === spi);
+        console.log(filt)
+        ui.renderproducts(filt)
+        ui.buttons()
+    }
+}
+
+function filtersweet(){
+    const ui = new mainUI();
+    sweet = document.getElementById("sweet").value;
+    if(sweet.length >0){
+        const filt = filtred.filter(value => value.type === sweet);
+        console.log(filt)
+        ui.renderproducts(filt)
+        ui.buttons()
+    }
+}
+
+function filtersoda(){
+    const ui = new mainUI();
+    soda = document.getElementById("soda").value;
+    if(soda.length >0){
+        const filt = filtred.filter(value => value.type === soda);
+        console.log(filt)
+        ui.renderproducts(filt)
+        ui.buttons()
+    }
+}
+
+function filterhealth(){
+    const ui = new mainUI();
+    health = document.getElementById("health").value;
+    if(health.length >0){
+        const filt = filtred.filter(value => value.type === health);
+        console.log(filt)
+        ui.renderproducts(filt)
+        ui.buttons()
+    }
+}
+
+function filterbread(){
+    const ui = new mainUI();
+    bread = document.getElementById("bread").value;
+    if(bread.length >0){
+        const filt = filtred.filter(value => value.type === bread);
+        console.log(filt)
+        ui.renderproducts(filt)
+        ui.buttons()
+    }
+}
 
 class Storage {
     static saveProduct(obj) {
@@ -211,17 +295,16 @@ class Storage {
 
     }
     static autoSave(data) {
-        localStorage.setItem("storage", JSON.stringify(data))
+        localStorage.setItem("shopcart", JSON.stringify(data))
     }
     static getProduct(id) {
         const product = JSON.parse(localStorage.getItem("products"));
         return product.find(product => product.id === parseFloat(id, 10))
     }
     static getcart() {
-        return localStorage.getItem("shopcar") ? JSON.parse(localStorage.getItem("shopcar")) : [];
+        return localStorage.getItem("shopcart") ? JSON.parse(localStorage.getItem("shopcart")) : [];
     }
 }
-
 
 
 
@@ -230,7 +313,7 @@ class Products {
         try {
             const result = await fetch("products.json");
             const data = await result.json();
-            const products = data.allprocducts
+            const products = data.allproducts
             return products
         }
         catch (err) {
@@ -239,16 +322,21 @@ class Products {
     }
 }
 
+
 document.addEventListener("DOMContentLoaded", async () => {
     const productList = new Products();
     const ui = new mainUI();
 
     ui.setAPP();
 
-    const products = await productList.getProducts();
-    ui.renderproducts(products);
-    Storage.saveProduct(products);
+    filtred = await productList.getProducts();
+
+    ui.renderproducts(filtred);
+    Storage.saveProduct(filtred);
     ui.buttons();
     ui.allcartfunction();
 })
+
+
+
 
