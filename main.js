@@ -235,7 +235,7 @@ class mainUI {
         <h1>${product.product}</h1>
       </div>
       <div class="price">
-        ${product.price}
+        ${product.price}€
       </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum ullam voluptas est repellendus numquam ad,
         neque,
