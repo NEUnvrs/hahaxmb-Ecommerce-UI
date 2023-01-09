@@ -15,16 +15,16 @@ nav {
     background-color: rgba(0, 0, 0, .85);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(20px);
-}
 
-.site-header a {
-    color: #eeeeee;
-    transition: color .15s ease-in-out;
-}
+    a {
+        color: #eeeeee;
+        transition: color .15s ease-in-out;
+    }
 
-.site-header a:hover {
-    color: rgb(236, 13, 13);
-    text-decoration: none;
+    a:hover {
+        color: rgb(236, 13, 13);
+        text-decoration: none;
+    }
 }
 
 .nav_shop {
@@ -34,13 +34,12 @@ nav {
 .nav_company {
     margin-top: .75rem;
     cursor: pointer;
-}
 
-.nav_company a {
-    text-decoration: none;
-    
-}
+    a {
+        text-decoration: none;
 
+    }
+}
 
 #shopcar {
     margin-top: 1rem;
@@ -80,7 +79,7 @@ nav {
     cursor: pointer;
 }
 
-.order_offcanvas{
+.order_offcanvas {
     cursor: pointer;
 }
 
@@ -100,7 +99,7 @@ nav {
     height: 32rem;
 }
 
-.carousel-inner{
+.carousel-inner {
     max-width: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -140,29 +139,44 @@ nav {
     flex-direction: column;
     flex-wrap: nowrap;
     margin: 4rem 4rem 0 4rem;
-    button{
+
+    button {
         text-decoration: none;
-        background-color: white;
+        background-color: $white;
         border: none;
+
     }
-    div{
+
+    div {
         cursor: pointer;
+
         i {
             font-size: 2.5rem;
         }
-    
+
         p {
-            margin-top: 2rem;
+            margin-top: 1rem;
+            visibility: hidden;
+            transition: .5s;
         }
     }
-    
 
-    .all_products{
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            color: rgb(123, 123, 123);
 
+    .all_products {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        color: rgb(123, 123, 123);
+        transition: .5s;
+
+    }
+    .all_products:hover{
+        color: rgb(82, 82, 82);
+        transition: .5s;
+        p{
+            visibility: visible;
+            transition: .5s;
+        }
     }
 
     .hot {
@@ -170,13 +184,46 @@ nav {
         align-items: center;
         flex-direction: column;
         color: rgb(199, 45, 45);
+        transition: .5s;
+        
+        i{
+            transition: .5s;
+        }
     }
+
+    .hot:hover{
+        color: rgb(246, 57, 57);
+        transition: .5s;
+        font-size: 2rem;
+        p{
+            visibility: visible;
+        }
+        i{
+            font-size: 3rem;
+            transition: .5s;
+        }
+        
+    }
+
 
     .sweet {
         display: flex;
         align-items: center;
         flex-direction: column;
         color: burlywood;
+    }
+    .sweet:hover{
+        color: rgb(199, 149, 79);
+        transition: .5s;
+        font-size: 2rem;
+        p{
+            visibility: visible;
+        }
+        i{
+            font-size: 3rem;
+            transition: .5s;
+        }
+        
     }
 
     .drink {
@@ -185,12 +232,38 @@ nav {
         flex-direction: column;
         color: rgb(46, 171, 171);
     }
+    .drink:hover{
+        color: rgb(31, 181, 201);
+        transition: .5s;
+        font-size: 2rem;
+        p{
+            visibility: visible;
+        }
+        i{
+            font-size: 3rem;
+            transition: .5s;
+        }
+        
+    }
 
     .medic {
         display: flex;
         align-items: center;
         flex-direction: column;
         color: rgb(52, 176, 54);
+    }
+    .medic:hover{
+        color: rgb(8, 137, 51);
+        transition: .5s;
+        font-size: 2rem;
+        p{
+            visibility: visible;
+        }
+        i{
+            font-size: 3rem;
+            transition: .5s;
+        }
+        
     }
 
     .bread {
@@ -199,8 +272,20 @@ nav {
         flex-direction: column;
         color: goldenrod;
     }
+    .bread:hover{
+        transition: .5s;
+        font-size: 2rem;
+        p{
+            visibility: visible;
+        }
+        i{
+            font-size: 3rem;
+            transition: .5s;
+        }
+        
+    }
 
-    
+
 }
 
 // select type ends
@@ -211,28 +296,33 @@ nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+
+    .produflex {
+        width: 20rem;
+        margin: 2rem 4rem;
+    }
+
+    img {
+        object-fit: cover;
+        width: 20rem;
+        height: 20rem;
+        border-radius: 10px;
+        box-shadow: 6px 12px 32px -7px rgba(0, 0, 0, 0.98);
+
+        h1 {
+            color: #333;
+        }
+
+    }
+
+    .price {
+        font-size: 2rem;
+    }
+
 }
 
-.produflex {
-    width: 20rem;
-    margin: 2rem;
-}
 
-.products img {
-    object-fit: cover;
-    width: 20rem;
-    height: 20rem;
-    border-radius: 10px;
-    box-shadow: 6px 12px 32px -7px rgba(0, 0, 0, 0.98);
-}
 
-.products h1 {
-    color: #333;
-}
-
-.products .price {
-    font-size: 2rem;
-}
 
 // product  elements    ends
 // shoppcart view start
@@ -247,6 +337,11 @@ nav {
     background-color: rgba(0, 0, 0, .6);
     visibility: hidden;
     z-index: 4;
+
+    h1 {
+        text-align: center;
+        font-size: 2rem;
+    }
 
 }
 
@@ -277,16 +372,6 @@ nav {
     visibility: visible;
 }
 
-.view_item img {
-    width: 7rem;
-    height: 7rem;
-    border-radius: 10px;
-}
-
-.shop_overlay h1 {
-    text-align: center;
-    font-size: 2rem;
-}
 
 .view_item {
     display: grid;
@@ -294,7 +379,14 @@ nav {
     grid-template-columns: 2fr 4fr 2fr 2fr;
     justify-items: center;
     margin: 1.5rem 0.5rem 1.5rem 0.5rem;
-    .description{
+
+    img {
+        width: 7rem;
+        height: 7rem;
+        border-radius: 10px;
+    }
+
+    .description {
         font-size: 1.5rem;
         text-align: center;
     }
@@ -340,30 +432,32 @@ nav {
 }
 
 // pagination elements ends
-// product view HTML elements 
-.V_product{
+// product view HTML elements !!!!!!!!
+.V_product {
     justify-content: space-around;
     flex-wrap: wrap;
-    padding: 5rem 0 0 0 ;
+    padding: 5rem 0 0 0;
 }
 
-.Vimg_product{
+.Vimg_product {
     width: 32rem;
     border-radius: 1rem;
     box-shadow: 6px 12px 32px -7px rgba(0, 0, 0, 0.98);
+
+    img {
+        width: 32rem;
+        height: 32rem;
+        object-fit: cover;
+        border-radius: 1rem;
+    }
 }
 
-.Vimg_product img{
-    width: 32rem;
-    border-radius: 1rem;
-}
-
-.title{
+.title {
     display: flex;
     justify-content: space-around;
 }
 
-.description{
+.description {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -371,84 +465,102 @@ nav {
 
 
 // responsive breakpoints MAJOR > MINOR orden
- 
+
 @media (max-width: 1120px) {
-    .types{
+    .types {
         margin: 3rem 2rem 0 3rem;
     }
 
-    .types div i{
+    .types div i {
         font-size: 2rem;
     }
 
+    .Vimg_product{
+        width: 24rem;
+        img{
+            width: 24rem;
+            height: 24rem;
+        }
+    
+    } 
 }
 
 @media (max-width: 860px) {
-    .products{
+    .products {
         margin: 0rem;
+
+        .produflex {
+            width: 20rem;
+            margin: 2rem 2rem;
+        }
+
+        img {
+            width: 15rem;
+        }
     }
 
-    .products img{
-        width: 15rem;
-    }
 
-    .shopcart{
+    .shopcart {
         width: 100%;
         height: 93%;
         border-radius: 0;
     }
-    .view_item img{
+
+    .view_item img {
         width: 5rem;
     }
 
-    .types div i{
+    .types div i {
         font-size: 1.5rem;
     }
 
-    
+
 
 }
 
-@media (max-width: 810px){
-    .types{
+@media (max-width: 810px) {
+    .types {
         margin: 2rem 1rem 0 2rem;
     }
 }
 
-@media (max-width: 700px){
-    .carousel-inner .ad1{
+@media (max-width: 700px) {
+    .carousel-inner .ad1 {
         background-image: url("https://i.pinimg.com/736x/2c/cb/f6/2ccbf6ada4ea10bd249a8ba0c59976fc--lipton-creative-advertising.jpg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        img{
+
+        img {
             opacity: 0;
         }
     }
 
-    .carousel-inner .ad2{
+    .carousel-inner .ad2 {
         background-image: url("https://media.istockphoto.com/id/1067566856/photo/mexican-pastries.jpg?b=1&s=170667a&w=0&k=20&c=A9mSCDdV1iqDfoKiMEvSpeJ_3anMD5jtWgA1GesK_oI=");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        img{
+
+        img {
             opacity: 0;
         }
     }
 
-    .carousel-inner .ad3{
+    .carousel-inner .ad3 {
         background-image: url("https://media.istockphoto.com/id/1165325252/pt/vetorial/light-brown-cream-bubble-tea-with-milk-and-black-tapioca-with-pink-straws-in-a-transparent.jpg?s=170667a&w=0&k=20&c=rdspAJrW9DGTYl3sEqxDufSHH9u4ppJiktkfbCO9fcM=");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        img{
+
+        img {
             opacity: 0;
         }
     }
 }
 
-@media (max-width: 280px){
-    .types{
+@media (max-width: 280px) {
+    .types {
         margin: 1rem 0rem 0 1rem;
     }
 }
@@ -458,11 +570,3 @@ nav {
         font-size: 3.5rem;
     }
 }
-
-
-
-
-
-
-
-

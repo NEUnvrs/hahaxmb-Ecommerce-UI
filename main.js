@@ -15,9 +15,13 @@ const itemsPopup = document.querySelector('.popupItems')
 const removeCart = document.querySelector('.removeCart')
 // carrito total 
 const totalitems = document.querySelector('.total_items')
+// 
+const allproductView = document.getElementById('details')
+
 
 let shopcart = []
 let buttonDOM = []
+
 
 class mainUI {
     renderproducts(productList) {
@@ -40,7 +44,7 @@ class mainUI {
             ${element.price}€
             </div>
             <div class="bt ">
-                <a href="productview.html? id=${element.id}" class="btn btn-primary">details</a>
+                <a href="productDetails.html?id=${element.id}" class="btn btn-primary">details</a>
                 <button href="" data-id="${element.id}" class="btn btn-primary addcar">add to shop list<i class="fa-solid fa-cart-arrow-down"></i></button>
             </div>
           </div>
@@ -76,17 +80,9 @@ class mainUI {
         })
     }
 
-    setItemValues(shopcart) {
-        let Total = 0;
-        let items = 0;
-        shopcart.map(item => {
-            Total += item.price * item.quantity;
-            items += item.quantity;
 
-        });
-        totalitems.innerText = parseFloat(Total.toFixed(2));
-        itemsPopup.innerText = items
-    }
+
+
 
     addShopcarItem({ id, product, price, image, alt }) {
         const div = document.createElement('div');
@@ -96,7 +92,7 @@ class mainUI {
         <div>
             <img
               src="${image}"
-              alt="eat ${alt}">
+              alt="${alt}">
               
             
           </div>
@@ -121,6 +117,17 @@ class mainUI {
           </div>`
 
         cartCenter.appendChild(div)
+    }
+    setItemValues(shopcart) {
+        let Total = 0;
+        let items = 0;
+        shopcart.map(item => {
+            Total += item.price * item.quantity;
+            items += item.quantity;
+
+        });
+        totalitems.innerText = parseFloat(Total.toFixed(2));
+        itemsPopup.innerText = items
     }
     show() {
         shopDom.classList.add('show')
@@ -166,7 +173,7 @@ class mainUI {
                 Storage.autoSave(shopcart)
                 this.setItemValues(shopcart)
                 target.nextElementSibling.innerText = item.quantity
-                
+
 
             }
             else if (target.classList.contains("decrease")) {
@@ -184,7 +191,7 @@ class mainUI {
                     cartCenter.removeChild(target.parentElement.parentElement)
                 }
             }
-            
+
         })
     }
     removeShopcart() {
@@ -194,10 +201,10 @@ class mainUI {
         while (cartCenter.children.length > 0) {
             cartCenter.removeChild(cartCenter.children[0])
 
-        }  
+        }
     }
 
-    removeItem(id){
+    removeItem(id) {
         shopcart = shopcart.filter(element => element.id !== id)
         this.setItemValues(shopcart);
         Storage.autoSave(shopcart)
@@ -209,10 +216,42 @@ class mainUI {
         }
     }
 
-    singleButton(id){
+    singleButton(id) {
         return buttonDOM.find(button => parseInt(button.dataset.id) == id)
     }
-    
+
+    productdetails(id) {
+        const product = filtred.filter(item => item.id == id)
+        let result = "";
+        product.forEach(product => {
+            result += `
+            <div class="Vimg_product col-xl-6">
+      <img
+        src=${product.image}
+        alt="${product.alt}">
+    </div>
+    <div class="description col-xl-6">
+      <div class="title">
+        <h1>${product.product}</h1>
+      </div>
+      <div class="price">
+        ${product.price}
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum ullam voluptas est repellendus numquam ad,
+        neque,
+        temporibus sequi saepe architecto commodi inventore voluptate quia earum accusamus corporis ab atque quaerat?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae cum alias enim ipsum architecto aut et
+        placeat omnis! Non id ad ex ratione beatae explicabo asperiores tempore voluptatibus eius facere. Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Sint at quam, soluta ipsam fugit hic odio quidem aut autem numquam
+        quasi eaque iure non sit alias voluptatem minima ducimus animi.</p>
+      <div class="adshopcar">
+      <button href="" data-id="${product.id}" class="btn btn-primary addcar">add to shop list<i class="fa-solid fa-cart-arrow-down"></i></button>
+      </div>
+    </div>`
+        });
+        allproductView.innerHTML = result;
+    }
+
 }
 
 // filter items function
@@ -220,24 +259,25 @@ class mainUI {
 let defaul = "";
 let spi = "";
 let sweet = "";
-let soda = ""; 
+let soda = "";
 let health = "";
 let bread = "";
 
 
 let filtred = [];
 
-function defaulttype(){
+
+function defaulttype() {
     const ui = new mainUI();
     defaul = document.getElementById("all").value;
     ui.renderproducts(filtred)
     ui.buttons()
 }
 
-function filterspy(){
+function filterspy() {
     const ui = new mainUI();
     spi = document.getElementById("spi").value;
-    if(spi.length >0){
+    if (spi.length > 0) {
         const filt = filtred.filter(value => value.type === spi);
         console.log(filt)
         ui.renderproducts(filt)
@@ -245,10 +285,10 @@ function filterspy(){
     }
 }
 
-function filtersweet(){
+function filtersweet() {
     const ui = new mainUI();
     sweet = document.getElementById("sweet").value;
-    if(sweet.length >0){
+    if (sweet.length > 0) {
         const filt = filtred.filter(value => value.type === sweet);
         console.log(filt)
         ui.renderproducts(filt)
@@ -256,10 +296,10 @@ function filtersweet(){
     }
 }
 
-function filtersoda(){
+function filtersoda() {
     const ui = new mainUI();
     soda = document.getElementById("soda").value;
-    if(soda.length >0){
+    if (soda.length > 0) {
         const filt = filtred.filter(value => value.type === soda);
         console.log(filt)
         ui.renderproducts(filt)
@@ -267,10 +307,10 @@ function filtersoda(){
     }
 }
 
-function filterhealth(){
+function filterhealth() {
     const ui = new mainUI();
     health = document.getElementById("health").value;
-    if(health.length >0){
+    if (health.length > 0) {
         const filt = filtred.filter(value => value.type === health);
         console.log(filt)
         ui.renderproducts(filt)
@@ -278,16 +318,18 @@ function filterhealth(){
     }
 }
 
-function filterbread(){
+function filterbread() {
     const ui = new mainUI();
     bread = document.getElementById("bread").value;
-    if(bread.length >0){
+    if (bread.length > 0) {
         const filt = filtred.filter(value => value.type === bread);
         console.log(filt)
         ui.renderproducts(filt)
         ui.buttons()
     }
 }
+
+
 
 class Storage {
     static saveProduct(obj) {
@@ -314,13 +356,17 @@ class Products {
             const result = await fetch("products.json");
             const data = await result.json();
             const products = data.allproducts
+            
             return products
+
         }
         catch (err) {
             console.log(err);
         }
     }
 }
+const query = new URLSearchParams(window.location.search)
+let id = query.get('id')
 
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -330,11 +376,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     ui.setAPP();
 
     filtred = await productList.getProducts();
-
+    if (id) {
+        ui.productdetails(id)
+        Storage.saveProduct(filtred);
+        ui.buttons();
+        ui.allcartfunction();
+    }
+    else {
     ui.renderproducts(filtred);
     Storage.saveProduct(filtred);
     ui.buttons();
     ui.allcartfunction();
+    }
+
 })
 
 

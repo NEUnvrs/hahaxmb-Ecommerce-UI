@@ -34,10 +34,10 @@
         <h3><a href="index.html">HAHAxiaomaibu</a></h3>
 
       </div>
-      <ul class="nav_shopcar col-xl-2">
+      <ul class="nav_shopcart col-xl-2">
         <div class="nav_shop">
           <i class="fa-solid fa-basket-shopping" id="shopcar"></i>
-          <span class="totalitem">0</span>
+          <span class="popupItems">0</span>
         </div>
       </ul>
     </div>
@@ -107,33 +107,39 @@
   </div>
   <!-- nav end -->
   <!-- product start -->
-  <div class="V_product d-flex ">
-    <div class="Vimg_product col-xl-6">
-      <img
-        src="https://cdn.discordapp.com/attachments/1044291289249755186/1045396681295941662/0ef847e8-c055-4b1e-9cf0-c09578c4ac26.jpg"
-        alt="eat this green">
-    </div>
-    <div class="description col-xl-6">
-      <div class="title">
-        <h1>Estoy muy rico</h1>
-      </div>
-      <div class="price">
-        3.25€
-      </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum ullam voluptas est repellendus numquam ad,
-        neque,
-        temporibus sequi saepe architecto commodi inventore voluptate quia earum accusamus corporis ab atque quaerat?
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae cum alias enim ipsum architecto aut et
-        placeat omnis! Non id ad ex ratione beatae explicabo asperiores tempore voluptatibus eius facere. Lorem ipsum
-        dolor sit amet consectetur adipisicing elit. Sint at quam, soluta ipsam fugit hic odio quidem aut autem numquam
-        quasi eaque iure non sit alias voluptatem minima ducimus animi.</p>
-      <div class="adshopcar">
-        <a href="" class="btn btn-primary">añadir al carrito</a>
-      </div>
-    </div>
+  <!-- <div class="products" id="products">
+
+  </div> -->
+  <div class="V_product d-flex " id="details">
+    
 
   </div>
+<!-- product end -->
+  <!-- shopcart -->
+  <section class="shop_overlay">
+    <div class="shopcart">
+      <span class="shopcart_close">
+        <button type="button" class="btn-close" aria-label="Close"></button>
+      </span>
+      <h1>your shop list</h1>
+
+      <div class="viewcenter">
+
+        <div class="view_item">
+          
+        </div>
+
+      </div>
+      <div class="shop_footer">
+        <h3>total: <span class="total_items"></span>€</h3>
+        <button type="button" class="btn btn-danger removeCart"><i class="fa-solid fa-eraser"></i>Remove shop
+          list</button>
+        <button type="button" class="btn btn-success"><i class="fa-solid fa-check"></i>confirm to buy</button>
+      </div>
+
+    </div>
+  </section>
+
   <script src="main.js"></script>
 </body>
 
-<!-- product end -->

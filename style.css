@@ -11,12 +11,10 @@ nav {
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   backdrop-filter: saturate(180%) blur(20px);
 }
-
 .site-header a {
   color: #eeeeee;
   transition: color 0.15s ease-in-out;
 }
-
 .site-header a:hover {
   color: rgb(236, 13, 13);
   text-decoration: none;
@@ -30,7 +28,6 @@ nav {
   margin-top: 0.75rem;
   cursor: pointer;
 }
-
 .nav_company a {
   text-decoration: none;
 }
@@ -128,7 +125,7 @@ nav {
 }
 .types button {
   text-decoration: none;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border: none;
 }
 .types div {
@@ -138,19 +135,46 @@ nav {
   font-size: 2.5rem;
 }
 .types div p {
-  margin-top: 2rem;
+  margin-top: 1rem;
+  visibility: hidden;
+  transition: 0.5s;
 }
 .types .all_products {
   display: flex;
   align-items: center;
   flex-direction: column;
   color: rgb(123, 123, 123);
+  transition: 0.5s;
+}
+.types .all_products:hover {
+  color: rgb(82, 82, 82);
+  transition: 0.5s;
+}
+.types .all_products:hover p {
+  visibility: visible;
+  transition: 0.5s;
 }
 .types .hot {
   display: flex;
   align-items: center;
   flex-direction: column;
   color: rgb(199, 45, 45);
+  transition: 0.5s;
+}
+.types .hot i {
+  transition: 0.5s;
+}
+.types .hot:hover {
+  color: rgb(246, 57, 57);
+  transition: 0.5s;
+  font-size: 2rem;
+}
+.types .hot:hover p {
+  visibility: visible;
+}
+.types .hot:hover i {
+  font-size: 3rem;
+  transition: 0.5s;
 }
 .types .sweet {
   display: flex;
@@ -158,11 +182,35 @@ nav {
   flex-direction: column;
   color: burlywood;
 }
+.types .sweet:hover {
+  color: rgb(199, 149, 79);
+  transition: 0.5s;
+  font-size: 2rem;
+}
+.types .sweet:hover p {
+  visibility: visible;
+}
+.types .sweet:hover i {
+  font-size: 3rem;
+  transition: 0.5s;
+}
 .types .drink {
   display: flex;
   align-items: center;
   flex-direction: column;
   color: rgb(46, 171, 171);
+}
+.types .drink:hover {
+  color: rgb(31, 181, 201);
+  transition: 0.5s;
+  font-size: 2rem;
+}
+.types .drink:hover p {
+  visibility: visible;
+}
+.types .drink:hover i {
+  font-size: 3rem;
+  transition: 0.5s;
 }
 .types .medic {
   display: flex;
@@ -170,11 +218,34 @@ nav {
   flex-direction: column;
   color: rgb(52, 176, 54);
 }
+.types .medic:hover {
+  color: rgb(8, 137, 51);
+  transition: 0.5s;
+  font-size: 2rem;
+}
+.types .medic:hover p {
+  visibility: visible;
+}
+.types .medic:hover i {
+  font-size: 3rem;
+  transition: 0.5s;
+}
 .types .bread {
   display: flex;
   align-items: center;
   flex-direction: column;
   color: goldenrod;
+}
+.types .bread:hover {
+  transition: 0.5s;
+  font-size: 2rem;
+}
+.types .bread:hover p {
+  visibility: visible;
+}
+.types .bread:hover i {
+  font-size: 3rem;
+  transition: 0.5s;
 }
 
 .products {
@@ -184,12 +255,10 @@ nav {
   flex-wrap: wrap;
   justify-content: space-around;
 }
-
-.produflex {
+.products .produflex {
   width: 20rem;
-  margin: 2rem;
+  margin: 2rem 4rem;
 }
-
 .products img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -198,11 +267,9 @@ nav {
   border-radius: 10px;
   box-shadow: 6px 12px 32px -7px rgba(0, 0, 0, 0.98);
 }
-
-.products h1 {
+.products img h1 {
   color: #333;
 }
-
 .products .price {
   font-size: 2rem;
 }
@@ -217,6 +284,10 @@ nav {
   background-color: rgba(0, 0, 0, 0.6);
   visibility: hidden;
   z-index: 4;
+}
+.shop_overlay h1 {
+  text-align: center;
+  font-size: 2rem;
 }
 
 .shopcart {
@@ -246,23 +317,17 @@ nav {
   visibility: visible;
 }
 
-.view_item img {
-  width: 7rem;
-  height: 7rem;
-  border-radius: 10px;
-}
-
-.shop_overlay h1 {
-  text-align: center;
-  font-size: 2rem;
-}
-
 .view_item {
   display: grid;
   align-items: center;
   grid-template-columns: 2fr 4fr 2fr 2fr;
   justify-items: center;
   margin: 1.5rem 0.5rem 1.5rem 0.5rem;
+}
+.view_item img {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 10px;
 }
 .view_item .description {
   font-size: 1.5rem;
@@ -311,9 +376,11 @@ nav {
   border-radius: 1rem;
   box-shadow: 6px 12px 32px -7px rgba(0, 0, 0, 0.98);
 }
-
 .Vimg_product img {
   width: 32rem;
+  height: 32rem;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 1rem;
 }
 
@@ -335,10 +402,21 @@ nav {
   .types div i {
     font-size: 2rem;
   }
+  .Vimg_product {
+    width: 24rem;
+  }
+  .Vimg_product img {
+    width: 24rem;
+    height: 24rem;
+  }
 }
 @media (max-width: 860px) {
   .products {
     margin: 0rem;
+  }
+  .products .produflex {
+    width: 20rem;
+    margin: 2rem 2rem;
   }
   .products img {
     width: 15rem;
